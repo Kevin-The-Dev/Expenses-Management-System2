@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+#expense-form, #expense-list {
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form input, form select, form button {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+#expenses {
+    list-style: none;
+    padding: 0;
+}
+
+#expenses li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#expenses li:last-child {
+    border-bottom: none;
+}
+#expense-chart {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#expense-chart h2 {
+    margin-bottom: 15px;
+}
+
+#expensePieChart {
+    width: 100% !important;
+    max-width: 600px;
+    height: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+}
