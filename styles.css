@@ -12,11 +12,27 @@ header {
     text-align: center;
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 main {
     padding: 20px;
 }
 
-#expense-form, #expense-list {
+#expense-form, #manage-categories, #budget-management, #recurring-expenses, #expense-list, #expense-chart, #expense-reports, #export-import {
     margin-bottom: 20px;
     background: white;
     padding: 15px;
@@ -44,36 +60,37 @@ form button:hover {
     background-color: #45a049;
 }
 
-#expenses {
+#expenses, #categoryList, #budgetList, #recurringList, #reportList {
     list-style: none;
     padding: 0;
 }
 
-#expenses li {
+#expenses li, #categoryList li, #budgetList li, #recurringList li, #reportList li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
 
-#expenses li:last-child {
+#expenses li:last-child, #categoryList li:last-child, #budgetList li:last-child, #recurringList li:last-child, #reportList li:last-child {
     border-bottom: none;
 }
-#expense-chart {
-    margin-top: 20px;
-    background: white;
-    padding: 15px;
+
+#auth-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth-container {
+    background-color: white;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-}
-
-#expense-chart h2 {
-    margin-bottom: 15px;
-}
-
-#expensePieChart {
-    width: 100% !important;
-    max-width: 600px;
-    height: 400px;
-    max-height: 400px;
-    margin: 0 auto;
 }
