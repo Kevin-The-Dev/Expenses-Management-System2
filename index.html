@@ -3,41 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expenses Management Prototype</title>
+    <title>Expense Management System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Expenses Management Prototype</h1>
+        <h1>Expense Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Add Expense</a></li>
+                <li><a href="#">Manage Categories</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">User Profile</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
+        <!-- Authentication Modal -->
+        <div id="auth-modal" style="display: none;">
+            <div id="auth-container">
+                <h2 id="auth-title">Login</h2>
+                <form id="authForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit" id="auth-submit">Login</button>
+                    <p id="toggle-auth">Don't have an account? <a href="#">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Expense Form -->
         <section id="expense-form">
             <h2>Add Expense</h2>
             <form id="expenseForm">
                 <input type="text" id="description" placeholder="Description" required>
                 <input type="number" id="amount" placeholder="Amount" required>
                 <input type="date" id="date" required>
-                <select id="category">
-                    <option value="Food">Food</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Study">Study</option>
-                    <option value="HomeExpense">Home Expense</option>
-
-
-                </select>
+                <select id="category"></select> <!-- Categories will be dynamically populated -->
                 <button type="submit">Add Expense</button>
             </form>
         </section>
+
+        <!-- Category Management -->
+        <section id="manage-categories">
+            <h2>Manage Categories</h2>
+            <form id="categoryForm">
+                <input type="text" id="newCategory" placeholder="New Category" required>
+                <button type="submit">Add Category</button>
+            </form>
+            <ul id="categoryList"></ul> <!-- Dynamically populate categories -->
+        </section>
+
+        <!-- Budget Management -->
+        <section id="budget-management">
+            <h2>Manage Budgets</h2>
+            <form id="budgetForm">
+                <select id="budgetCategory"></select> <!-- Categories will be dynamically populated -->
+                <input type="number" id="budgetAmount" placeholder="Set Budget" required>
+                <button type="submit">Set Budget</button>
+            </form>
+            <ul id="budgetList"></ul> <!-- Dynamically show budgets -->
+        </section>
+
+        <!-- Recurring Expenses -->
+        <section id="recurring-expenses">
+            <h2>Recurring Expenses</h2>
+            <form id="recurringForm">
+                <input type="text" id="recurringDescription" placeholder="Description" required>
+                <input type="number" id="recurringAmount" placeholder="Amount" required>
+                <input type="date" id="recurringStartDate" required>
+                <select id="recurringFrequency">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                <input type="number" id="recurringDuration" placeholder="Duration (days)" required>
+                <button type="submit">Add Recurring Expense</button>
+            </form>
+            <ul id="recurringList"></ul> <!-- Recurring expenses -->
+        </section>
+
+        <!-- Expense List -->
         <section id="expense-list">
             <h2>Expenses</h2>
-            <ul id="expenses"></ul>
+            <ul id="expenses"></ul> <!-- Dynamically populated expenses list -->
         </section>
+
+        <!-- Chart Section -->
         <section id="expense-chart">
             <h2>Expense Distribution</h2>
             <canvas id="expensePieChart" width="400" height="400"></canvas>
         </section>
+
+        <!-- Reports -->
+        <section id="expense-reports">
+            <h2>Expense Reports</h2>
+            <form id="reportForm">
+                <input type="date" id="startDate" required>
+                <input type="date" id="endDate" required>
+                <button type="submit">Generate Report</button>
+            </form>
+            <ul id="reportList"></ul> <!-- Report results -->
+        </section>
+
+        <!-- CSV Export/Import -->
+        <section id="export-import">
+            <button id="exportCSV">Export Expenses to CSV</button>
+            <input type="file" id="importCSV" accept=".csv">
+        </section>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
